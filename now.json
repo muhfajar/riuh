@@ -1,0 +1,14 @@
+{
+  "name": "riuh",
+  "version": 2,
+  "builds": [
+    {
+      "src": "main.go",
+      "use": "@now/go"
+    },
+    {
+      "src": "assets/**",
+      "use": "@now/static"
+    }
+  ]
+}
