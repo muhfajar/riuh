@@ -3,12 +3,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "main.go",
+      "src": "/zeit.go",
       "use": "@now/go"
-    },
+    }
+  ],
+  "routes": [
     {
-      "src": "assets/**",
-      "use": "@now/static"
+      "src": "/(.*)",
+      "dest": "/zeit.go"
     }
   ]
 }

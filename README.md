@@ -1,4 +1,4 @@
-https://github.com/masdevid/ID-OpinionWords
-
-http://ptrckprry.com/course/ssd/data/negative-words.txt
-http://ptrckprry.com/course/ssd/data/positive-words.txt
+https://github.com/masdevid/ID-OpinionWords/
+https://github.com/masdevid/ID-Stopwords/
+http://ptrckprry.com/course/ssd/
+https://meta.wikimedia.org/wiki/Stop_word_list/google_stop_word_list#English
