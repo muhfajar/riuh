@@ -13,14 +13,8 @@ import (
 func Handler(w http.ResponseWriter, _ *http.Request) {
 	tokenizer := sastrawi.NewTokenizer()
 	classifier := bayesian.NewClassifierTfIdf(Good, Bad)
-
-	pos := lexicon.PositiveId
-	neg := lexicon.NegativeId
-	pos = append(pos, lexicon.PositiveEn...)
-	neg = append(neg, lexicon.NegativeEn...)
-
-	classifier.Learn(pos, Good)
-	classifier.Learn(neg, Bad)
+	classifier.Learn(lexicon.Positive(), Good)
+	classifier.Learn(lexicon.Negative(), Bad)
 	classifier.ConvertTermsFreqToTfIdf()
 
 	d := &data{
