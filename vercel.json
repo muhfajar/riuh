@@ -1,9 +1,6 @@
 {
   "build": {
     "src": "api/**/*.go",
-    "use": "@now/go",
-    "env": {
-      "GO_BUILD_FLAGS": "-ldflags '-s -w' -mod=readonly"
-    }
+    "use": "@now/go"
   }
 }
