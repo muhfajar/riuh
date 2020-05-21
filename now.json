@@ -1,16 +1,14 @@
 {
-  "name": "riuh",
-  "version": 2,
   "builds": [
     {
-      "src": "/zeit.go",
+      "src": "api/**/*.go",
       "use": "@now/go"
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/(.*)",
-      "dest": "/zeit.go"
+      "source": "/(.*)",
+      "destination": "/api"
     }
   ]
 }

@@ -1,8 +1,9 @@
-package api
+package handler
 
 import (
+	"encoding/json"
+	"fmt"
 	"github.com/RadhiFadlillah/go-sastrawi"
-	"github.com/gin-gonic/gin"
 	"github.com/jbrukh/bayesian"
 	"github.com/muhfajar/queue"
 	twt "github.com/n0madic/twitter-scraper"
@@ -35,16 +36,16 @@ type data struct {
 	BlankTokenCount int       `json:"blank_token_count"`
 }
 
-func Routes() *gin.Engine {
-	r := gin.Default()
+func Handler(w http.ResponseWriter, _ *http.Request) {
+	d := &data{}
+	d.worker()
 
-	r.GET("/api", func(c *gin.Context) {
-		d := &data{}
-		d.worker()
-		c.JSON(http.StatusOK, d)
-	})
+	resp, err := json.Marshal(d)
+	if err != nil {
+		log.Println(err)
+	}
 
-	return r
+	_, _ = fmt.Fprintf(w, string(resp))
 }
 
 func (d *data) worker() {
