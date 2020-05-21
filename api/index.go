@@ -98,7 +98,7 @@ func (d *data) sentiment(trend string) {
 	query := trend
 	query += "-filter:retweets"
 
-	tweets := twt.SearchTweets(query, 5000)
+	tweets := twt.SearchTweets(query, 1)
 
 	q := queue.NewQueue(&queue.Worker{
 		Thread: 250,

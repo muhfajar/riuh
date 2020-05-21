@@ -26,3 +26,5 @@ out
 gen
 *.DS_Store
 vendor/
+
+.now
